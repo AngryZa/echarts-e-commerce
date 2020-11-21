@@ -4,8 +4,11 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 
+// 引入全局样式
+import "./assets/css/global.scss"
+
 //请求基准路径的配置
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api'
+axios.defaults.baseURL = 'http://192.168.1.2:3000/api/'
 //将axios挂载到 Vue 的原型对象上
 //在别的组件中 this.$http
 Vue.prototype.$http = axios
@@ -14,7 +17,7 @@ Vue.prototype.$http = axios
 
 // 将全局Echarts对象全局挂载在 Vue 的原型对象上
 // 在别的组件上 this.$echarts 
-Vue.prototype.$echarts = window.$echarts
+Vue.prototype.$echarts = window.echarts
 
 
 
