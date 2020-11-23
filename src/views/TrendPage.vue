@@ -1,25 +1,25 @@
 <template>
   <div class="com-page">
-    <seller />
+      <trend/>
   </div>
 </template>
 
 <script>
-import Seller from "../components/Seller";
+import trend from '@/components/Trend'
 export default {
-  components: {
-    seller: Seller,
-  },
+  components: {trend},
   props: {},
   data() {
-    return {};
+    return {
+    };
   },
   watch: {},
   computed: {},
   methods: {},
   created() {},
-  mounted() {},
+  mounted() {}
 };
 </script>
 <style lang="scss" scoped>
+.wrapper{}
 </style>

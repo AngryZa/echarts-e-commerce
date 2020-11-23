@@ -9,6 +9,11 @@ const routes = [
     path: '/sellerPage',
     name: 'SellerPage',
     component: resolve =>require(['../views/SellerPage'],resolve)
+  },
+  {
+    path: '/trendPage',
+    name: 'TrendPage',
+    component: resolve =>require(['../views/TrendPage'],resolve)
   }
 ]
 

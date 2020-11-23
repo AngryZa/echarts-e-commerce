@@ -25,6 +25,9 @@ export default {
     window.addEventListener("resize", this.screenAdapter);
     //在界面加载完成的时候主动进行适配
     this.screenAdapter();
+    /* window.addEventListener('keypress',(i)=>{
+      console.log(i,'i')
+    }) */
   },
   computed: {},
   methods: {
@@ -195,11 +198,13 @@ export default {
       // 手动的调用图表的resize方法，完成图表的适配
       this.chartInstance.resize();
     },
+
+
   },
   created() {},
   destroyed() {
     clearInterval(this.timeId);
-    window.removeEventListener('resize',this.screenAdapter)
+    window.removeEventListener("resize", this.screenAdapter);
   },
 };
 </script>
