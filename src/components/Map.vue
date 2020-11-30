@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     async initChart() {
-      this.chartInstance = this.$echarts.init(this.$refs.map_ref);
+      this.chartInstance = this.$echarts.init(this.$refs.map_ref,'chalk');
       //获取中国地图的矢量数-------本地数据
       const req = await axios.get(
         "http://localhost:8999/static/map/china.json"
@@ -38,10 +38,29 @@ export default {
       // console.log(req,'res')
       this.$echarts.registerMap("china", req.data);
       const initOption = {
+          title:{
+              text:"| 商家分布",
+              left:20,
+              top:20
+          },
         geo: {
           type: "map",
           map: "china",
+          top:'5%',
+          bottom:'5%',
+          itemStyle:{
+            areaColor:'#2E72BF', //设置地图的区域颜色
+            borderColor:'#333'  //设置地图省份边界的颜色
+          }
         },
+        legend:{
+            left:"5%",
+            bottom:'5%',
+            textStyle:{
+                // fontSize:20
+            },
+            orient:'vertical' //配置图例的方向
+        }
       };
       this.chartInstance.setOption(initOption);
     },
@@ -64,6 +83,11 @@ export default {
         //如果想在地图中显示散点的数据，我们需要给散点的图增加一个配置，coordinateSyste,:geo
         return {
           type: "effectScatter",
+          rippleEffect:{ //涟漪动画设置
+              scale:4,  //涟漪动画的大小设置
+              brushType: 'stroke' //空心的涟漪动画
+
+          },
           name: item.name,
           data: item.children,
           coordinateSystem: "geo",
