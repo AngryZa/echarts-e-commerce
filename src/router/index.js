@@ -14,6 +14,11 @@ const routes = [
     path: '/trendPage',
     name: 'TrendPage',
     component: resolve =>require(['../views/TrendPage'],resolve)
+  },
+  {
+    path: '/mapPage',
+    name: 'MapPage',
+    component: resolve =>require(['../views/MapPage'],resolve)
   }
 ]
 
