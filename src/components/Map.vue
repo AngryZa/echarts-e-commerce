@@ -38,7 +38,7 @@ export default {
       // console.log(req,'res')
       this.$echarts.registerMap("china", req.data);
       const initOption = {
-          title:{
+        title:{
               text:"| 商家分布",
               left:20,
               top:20
@@ -84,7 +84,7 @@ export default {
         return {
           type: "effectScatter",
           rippleEffect:{ //涟漪动画设置
-              scale:4,  //涟漪动画的大小设置
+              scale:6,  //涟漪动画的大小设置
               brushType: 'stroke' //空心的涟漪动画
 
           },
@@ -95,6 +95,7 @@ export default {
       });
       const dataOption = {
         series: seriesArr,
+        color:['#ED7C30','#80FF80','#FF8096','#800080'], //设置legend图例的颜色
         legend: {
           data: lengendArr,
         },
@@ -103,7 +104,24 @@ export default {
     },
     screenAdapter() {
       //屏幕适配
-      const adapterOption = {};
+    const titleFontSize=this.$refs.map_ref.offsetWidth/100 *3.6
+
+    const adapterOption={
+        title:{
+            textStyle:{
+               fontSize:titleFontSize
+            }
+        },
+        legend:{
+            itemWidth:titleFontSize/2,
+            itemHeight:titleFontSize/2,
+            itemGap:titleFontSize/2,
+            textStyle:{
+                fontSize:titleFontSize/2
+            }
+        }
+    }
+     
       this.chartInstance.setOption(adapterOption);
       this.chartInstance.resize();
     },

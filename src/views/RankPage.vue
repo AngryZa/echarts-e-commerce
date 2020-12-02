@@ -1,18 +1,17 @@
 <template>
   <div class="com-page">
-    <single-map></single-map>
+      <rank></rank>
   </div>
 </template>
 
 <script>
-import Map from "@/components/Map";
+import Rank from '@/components/Rank'
 export default {
-  components: {
-    "single-map": Map,
-  },
+  components: {Rank},
   props: {},
   data() {
-    return {};
+    return {
+    };
   },
   watch: {},
   computed: {},
@@ -22,7 +21,5 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.wrapper {
-  // width: 100;
-}
+.wrapper{}
 </style>

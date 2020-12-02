@@ -19,6 +19,11 @@ const routes = [
     path: '/mapPage',
     name: 'MapPage',
     component: resolve =>require(['../views/MapPage'],resolve)
+  },
+  {
+    path: '/rankPage',
+    name: 'RankPage',
+    component: resolve =>require(['../views/RankPage'],resolve)
   }
 ]
 
