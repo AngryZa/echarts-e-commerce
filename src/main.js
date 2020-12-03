@@ -10,7 +10,7 @@ import './assets/font/iconfont.css'
 import "./assets/css/global.scss"
 
 //请求基准路径的配置
-axios.defaults.baseURL = 'http://192.168.1.4:3005/api/'
+axios.defaults.baseURL = 'http://192.168.1.2:3005/api/'
 //将axios挂载到 Vue 的原型对象上
 //在别的组件中 this.$http
 Vue.prototype.$http = axios

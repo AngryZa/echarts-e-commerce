@@ -24,6 +24,11 @@ const routes = [
     path: '/rankPage',
     name: 'RankPage',
     component: resolve =>require(['../views/RankPage'],resolve)
+  },
+  {
+    path: '/stockPage',
+    name: 'StockPage',
+    component: resolve =>require(['../views/StockPage'],resolve)
   }
 ]
 
